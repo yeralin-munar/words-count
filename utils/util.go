@@ -50,6 +50,8 @@ func WriteToFile(pathToFile string, bytes []byte) error {
 	return nil
 }
 
+// StringToUnicode encode all string's chars
+// into their stringified unicode
 func StringToUnicode(s string) string {
 	var newString string
 	for i, l := range []rune(s) {
@@ -62,6 +64,9 @@ func StringToUnicode(s string) string {
 	return newString
 }
 
+// UnicodeSToString decode stringified uncode chars
+// which are concatenated with underscore
+// into symbols then into string
 func UnicodeSToString(s string) string {
 	var runes []rune
 	s = strings.Trim(s, "_")

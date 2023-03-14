@@ -20,7 +20,6 @@ var (
 	f = flag.String("f", "", "Path to input file")
 )
 
-// Folder where all searches will be stored via tool working
 const SEARCH_DIRECTORY = "searches/"
 const OUTPUT_FILENAME = "output.txt"
 
@@ -80,14 +79,6 @@ func init() {
 		log.Fatalf("remove output file %s: %s", OUTPUT_FILENAME, err)
 	}
 }
-
-/*
-	Create|Open file and store bytes
-	pathToFile - is word and file name
-	n - is word count frequency which should be added to the file
-
-	This file size is word frequency count
-*/
 
 func removeCallback(word string, count int) {
 	file := utils.StringToUnicode(word)
